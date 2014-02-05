@@ -27,9 +27,8 @@ public class Lector {
 		imprimirNodo(nodo, indent);
 
 		NodeList personaNodeList = nodo.getChildNodes();
-		indent = ""; 
+		indent += "-"; 
 		for (int i = 0; i < personaNodeList.getLength(); i++) {
-			indent += "-";
 			if (personaNodeList.item(i) instanceof Element) {
 				imprimir(personaNodeList.item(i), indent);
 			}
