@@ -14,7 +14,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import es.indra.formacion.pr.xml.jaxp.model.Coche;
 import es.indra.formacion.pr.xml.jaxp.model.Ordenador;
 import es.indra.formacion.pr.xml.jaxp.model.Persona;
 
@@ -50,7 +49,6 @@ public class LectorBinding {
 				String nombre, apellido, sfechaNacimiento, saltura;
 				nombre = apellido = sfechaNacimiento = saltura = null;
 				List<Ordenador> ordenadores = null; 
-				List<Coche> coches = new ArrayList<Coche>();
 				
 				
 				NodeList personaHijos = e.getChildNodes();
@@ -91,10 +89,10 @@ public class LectorBinding {
 										}
 									}
 									
+									Ordenador o = new Ordenador(onombre, serial);
+									ordenadores.add(o);
 								}
 
-								Ordenador o = new Ordenador(onombre, serial);
-								ordenadores.add(o);
 							}
 						}
 					}
